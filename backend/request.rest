@@ -2,3 +2,24 @@ GET  http://localhost:5000/scan
 
 ###
 GET  http://localhost:5000/scan/1
+
+###
+POST http://localhost:5000/scan
+Content-Type: application/json
+
+{
+    "id": 1067,
+    "status": "Ditunggu orang tua.."
+}
+
+###
+PATCH http://localhost:5000/scan/1067
+Content-Type: application/json
+
+{
+    "id": 1066,
+    "status": "Ditunggu orang tua.."
+}
+
+###
+DELETE http://localhost:5000/scan/1066
