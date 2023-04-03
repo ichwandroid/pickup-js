@@ -1,0 +1,4 @@
+GET  http://localhost:5000/scan
+
+###
+GET  http://localhost:5000/scan/1
