@@ -8,7 +8,7 @@ POST http://localhost:5000/scan
 Content-Type: application/json
 
 {
-    "id": 1065,
+    "id": 1125,
     "status": "Ditunggu orang tua.."
 }
 
