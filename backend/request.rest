@@ -1,14 +1,14 @@
 GET  http://localhost:5000/scan
 
 ###
-GET  http://localhost:5000/scan/1
+GET  http://localhost:5000/scan/1067
 
 ###
 POST http://localhost:5000/scan
 Content-Type: application/json
 
 {
-    "id": 1067,
+    "id": 1065,
     "status": "Ditunggu orang tua.."
 }
 
@@ -17,7 +17,7 @@ PATCH http://localhost:5000/scan/1067
 Content-Type: application/json
 
 {
-    "id": 1066,
+    "id": 1064,
     "status": "Ditunggu orang tua.."
 }
 

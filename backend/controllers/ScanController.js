@@ -4,7 +4,11 @@ const prisma = new PrismaClient();
 
 export const getScan = async (req, res) => {
   try {
-    const response = await prisma.scan.findMany();
+    const response = await prisma.scanning.findMany({
+      include: {
+        students: { select: { nama: true, kelas: true, panggilan: true } },
+      },
+    });
     res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
@@ -13,7 +17,7 @@ export const getScan = async (req, res) => {
 
 export const getScanById = async (req, res) => {
   try {
-    const response = await prisma.scan.findUnique({
+    const response = await prisma.scanning.findUnique({
       where: {
         id: Number(req.params.id),
       },
@@ -27,7 +31,7 @@ export const getScanById = async (req, res) => {
 export const createScan = async (req, res) => {
   const { id, status } = req.body;
   try {
-    const scan = await prisma.scan.create({
+    const scan = await prisma.scanning.create({
       data: {
         id: id,
         status: status,
@@ -42,7 +46,7 @@ export const createScan = async (req, res) => {
 export const updateScan = async (req, res) => {
   const { id, status } = req.body;
   try {
-    const scan = await prisma.scan.update({
+    const scan = await prisma.scanning.update({
       where: {
         id: Number(req.params.id),
       },
@@ -59,7 +63,7 @@ export const updateScan = async (req, res) => {
 
 export const deleteScan = async (req, res) => {
   try {
-    const scan = await prisma.scan.delete({
+    const scan = await prisma.scanning.delete({
       where: {
         id: Number(req.params.id),
       },

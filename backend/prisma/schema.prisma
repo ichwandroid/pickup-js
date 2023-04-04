@@ -10,8 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model scan {
+model Scanning {
   id Int @id
   status String
   timescan DateTime @default(now())
+  students Student[]
+}
+
+model Student {
+  id Int @id
+  nama String
+  kelas String
+  panggilan String
+  kelamin String
+  scan Scanning @relation(fields: [scanid], references: [id])
+  scanid Int
 }
