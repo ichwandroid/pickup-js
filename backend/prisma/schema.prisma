@@ -23,6 +23,6 @@ model Student {
   kelas String
   panggilan String
   kelamin String
-  scan Scanning @relation(fields: [scanid], references: [id])
+  scan Scanning @relation(fields: [scanid], references: [id], onDelete: NoAction)
   scanid Int
 }

@@ -20,4 +20,4 @@ CREATE TABLE `Student` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE `Student` ADD CONSTRAINT `Student_scanid_fkey` FOREIGN KEY (`scanid`) REFERENCES `Scanning`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Student` ADD CONSTRAINT `Student_scanid_fkey` FOREIGN KEY (`scanid`) REFERENCES `Scanning`(`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
